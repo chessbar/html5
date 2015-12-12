@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>旋转</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: #d90;
+		}
+		.div2{
+			width: 100px;
+			height: 100px;
+			background-color: #d90;
+			transform:translate(100px,100px);
+			-webkit-transform: translate(100px,100px);/*safari chrome*/
+			-ms-transform:translate(100px,100px);/*IE*/
+			-o-transform:translate(100px,100px);/*opera*/
+			-moz-transform: translate(100px,100px);
+		}
+		.div3{
+			background-color: red;
+			transition: width 2s,height 2s,transform2s;
+			-webkit-transition:width 2s,height 2s -webkit-transform 2s;
+			-ms-transition:width 2s,height 2s -ms-transform 2s;
+			-o-transition:width 2s,height 2s -o-transform 2s;
+			-moz-transition:width 2s,height 2s -moz-transform 2s;
+		}
+		.div3:hover{
+			width: 200px;
+			height: 200px;
+			transform:rotate(45deg);
+			-webkit-transform:rotate(45deg);
+			-ms-transform:rotate(45deg);
+			-o-transform:rotate(45deg);
+			-moz-transform:rotate(45deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3"></div>
+</body>
+</html>

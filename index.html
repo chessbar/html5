@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>html5</title>
+</head>
+<body>
+	<audio src="12.wav" id='audio' controls=controls>
+		您的浏览器不支持！！
+	</audio>
+	<button onclick="clickA()">播放/暂停</button>
+	<script type="text/javascript">
+	 var audio = document.getElementById('audio');
+	 function clickA(){
+	 	if(audio.paused){
+	 		audio.play();
+	 	}else{
+	 		audio.pause();
+	 	}
+	 }
+	 </script>
+	 <br/>
+	 <video id='video' controls=controls width="500px" height="500px">
+	 	<source src="1.mp4"></source>
+		您的浏览器不支持！！
+	</video>
+	<button onclick="clickV()">播放/暂停</button>
+	<script type="text/javascript">
+	 var video = document.getElementById('video');
+	 function clickV(){
+	 	if(video.paused){
+	 		video.play();
+	 	}else{
+	 		video.pause();
+	 	}
+	 }
+	 </script>
+</body>
+</html>

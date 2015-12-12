@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebApp 列车时刻表</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="
+			width=device-width,
+			height=device-width,
+			initial-scale = 1.0,
+			minimum-scale =1.0,
+			maximum-scale =1.0,
+			user-scalable =no
+		"
+	/>
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
+	
+</head>
+<!--
+data-transition属性
+slide
+slideup
+slidedown
+pop
+fade
+flip
+
+-->
+<body>
+	<div data-role="page" id="index">
+		<div data-role="header" data-position="fixed">标的1</div>
+		<div data-role="main" class="ui-content">
+		<form class="ui-field-contain">
+			<label>发车站</label>
+			<input type="text">
+			<label>到达站</label>
+			<input type="text">
+			<label>车次</label>
+			<input type="text">
+		</form>
+		<input type="submit" value="搜索" id="ajaxbtn">
+		<table data-role="table" data-mode="reflow" class="ui-responsive table-stroke">
+			<thead>
+				<tr>
+					<th>站名</th>
+					<th>到站时间</th>
+					<th>出发时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1111</td>
+					<td>1111</td>
+					<td>1111</td>
+				</tr>
+				<tr>
+					<td>222</td>
+					<td>2222</td>
+					<td>22222</td>
+				</tr>
+				<tr>
+					<td>22222</td>
+					<td>23333</td>
+					<td>5555</td>
+				</tr>
+			</tbody>
+		</table>
+			<ul data-role="listview" data-inset=true>
+					<li><a href="#">
+						<h2>G1次</h2>
+						<p>xxx-xxxx</p>
+						<p>xxx-xxxx</p>
+						<p class="ui-li-aside">9:00开</p>
+					</a></li>
+					<li><a href="#">项目1</a></li>
+					<li><a href="#">项目1</a></li>
+				</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-icon="camera"></a></li>
+					<li><a href="#" data-icon="carat-l"></a></li>
+					<li><a href="#" data-icon="carat-r"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div data-role="page" id="index2">
+		<div data-role="header">标的2</div>
+		<div data-role="main" class="ui-content">
+			<p>我是内容22</p>
+			<a href="#index" data-transition="flip">返回页面2</a>
+		</div>
+		<div data-role="footer">
+			我是页脚22
+		</div>
+	</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+	/*$(document).on("pagebeforecreate",function(){
+		alert("pagebeforecreate");
+	})
+	$(document).on("pagecreate",function(){
+		alert("pagecreate");
+	})
+	$(document).on("pageinit",function(){
+		alert("pageinit");
+	})
+	$(document).on("pagebeforehide","#index",function(){
+		alert("pagebeforehide");
+	})
+	$(document).on("pagehide","#index",function(){
+		alert("pagehide");
+	})
+	$(document).on("pagebeforeshow","#index2",function(){
+		alert("pagebeforeshow");
+	})
+	$(document).on("pageshow","#index2",function(){
+		alert("pageshow");
+	})*/
+	$(document).on('pageinit','#index',function(){
+		var url="http://www.corsproxy.com/www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimesByStationName?UserID=";
+		$("#ajaxbtn").on('click',function(){
+			$.mobile.loading("show");
+			$.get(url,{TrainCode:"G1"},function(data){
+				console.log(data);
+				$.mobile.loading('hide');
+
+			});
+		})
+	})
+</script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+</html>

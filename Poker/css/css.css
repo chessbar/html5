@@ -1,0 +1,47 @@
+*{
+	padding: 0;
+	margin:0;
+}
+#contianer{
+	margin:50px;
+	width: 275px;
+}
+.btn{
+	width: 100px;
+	height: 30px;
+	color:#fff;
+	background: #d90;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 5px;
+	cursor: pointer;
+	float: left;
+	margin:10px;
+}
+.btn:hover{
+	background: #d80;
+}
+.red{
+	display: block;
+	float: left;
+	margin-right: 5px;
+	width: 30px;
+	height: 30px;
+	border: 2px solid red;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 32px;
+	color:red;
+}
+.blue{
+	display: block;
+	float: left;
+	margin-right: 5px;
+	width: 30px;
+	height: 30px;
+	border: 2px solid blue;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 32px;
+	color:blue;
+}
